@@ -1,0 +1,7 @@
+Generate a 2048 bit RSA Key
+openssl genrsa -des3 -out keypair.pem 2048
+
+#Public Key
+openssl rsa -in keypair.pem -pubout -out public.pem
+#Private key
+openssl pkcs8 -topk8 -inform PEM -nocrypt -in keypair.pem -out private.pem
